@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 
 mapbox_apikey = "pk.eyJ1IjoiYW5kcmVhbWF6em9sZW5pIiwiYSI6ImNqemQ2dWUwczAzbWMzZHBlb3h0b2RxNGoifQ.iN9TK8p2JFjQTZ8Ed9DrEA"
 
-directory = "/Users/andreamazzoleni/Desktop"
+directory = "/Users/andreamazzoleni/Documents/Github/Dash_Mapbox_Italian_Banks"
 os.chdir(directory)
 
 # Set up databases
