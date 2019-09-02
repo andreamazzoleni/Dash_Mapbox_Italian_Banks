@@ -12,8 +12,6 @@ import numpy as np
 from fuzzywuzzy import fuzz, process
 from matplotlib.colors import Normalize
 from matplotlib import cm
-from itertools import product
-import copy
 import matplotlib.pyplot as plt
 
 mapbox_apikey = "pk.eyJ1IjoiYW5kcmVhbWF6em9sZW5pIiwiYSI6ImNqemQ2dWUwczAzbWMzZHBlb3h0b2RxNGoifQ.iN9TK8p2JFjQTZ8Ed9DrEA"
