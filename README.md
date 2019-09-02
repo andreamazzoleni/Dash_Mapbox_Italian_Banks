@@ -1,4 +1,4 @@
-# Dash, Mapbox = Visualization of Branches for Italian Banking Groups
+# Visualization of Branches for Italian Banking Groups
 
 In this project I use Dash and Mapbox to visualize on a map what the combination of different banking groups in Italy would look like from the perspective of their branch network.
 
