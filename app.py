@@ -13,16 +13,14 @@ from fuzzywuzzy import fuzz, process
 from matplotlib.colors import Normalize
 from matplotlib import cm
 import matplotlib.pyplot as plt
-
+import urllib.request as request
+import csv
 mapbox_apikey = "pk.eyJ1IjoiYW5kcmVhbWF6em9sZW5pIiwiYSI6ImNqemQ2dWUwczAzbWMzZHBlb3h0b2RxNGoifQ.iN9TK8p2JFjQTZ8Ed9DrEA"
-
-directory = "/Users/andreamazzoleni/Documents/Github/Dash_Mapbox_Italian_Banks"
-os.chdir(directory)
 
 # Set up databases
 
 ## coordinates
-main = pd.read_excel('main_v2.xlsx')
+main = pd.read_csv("https://raw.githubusercontent.com/andreamazzoleni/Dash_Mapbox_Italian_Banks/master/main_v2.csv")
 all = main.Gruppo.drop_duplicates().tolist()
 all.sort()
 all = ['BBPM','BNP','BPB','BPER','BPS','CARIGE','CASA','CREDEM','CREVAL','DB','INTESA','MEDIOBANCA','MPS','SELLA','UBI','UNICREDIT']
