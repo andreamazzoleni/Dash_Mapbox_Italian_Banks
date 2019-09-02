@@ -14,6 +14,7 @@ from matplotlib.colors import Normalize
 from matplotlib import cm
 import matplotlib.pyplot as plt
 import urllib.request as request
+from urllib.request import urlopen
 import csv
 mapbox_apikey = "pk.eyJ1IjoiYW5kcmVhbWF6em9sZW5pIiwiYSI6ImNqemQ2dWUwczAzbWMzZHBlb3h0b2RxNGoifQ.iN9TK8p2JFjQTZ8Ed9DrEA"
 
@@ -58,20 +59,10 @@ for i in all:
     df1 = main[main['Gruppo'] == f'{i}']
     count.append(len(df1))
 
-## Choropleth DB
-
-os.chdir("/users/andreamazzoleni/desktop")
-
-df = pd.read_excel("loans.xlsx",header=0)
-df = df.set_index('Provincia')
-df = pd.Series(df["Value"])
-df['Milano'] =0
-df['Roma'] =0
-
 # Choropleth Map
 
-with open('province_2019.geojson') as f:
-     geojson = json.load(f)
+with urlopen("https://raw.githubusercontent.com/andreamazzoleni/Dash_Mapbox_Italian_Banks/master/province_2019.txt") as conn:
+    geojson = json.load(conn)
 
 n_provinces = len(geojson['features'])
 provinces_names = []
@@ -302,8 +293,8 @@ def multi_output(value):
 def update_choropleth(value):
 
     var = value
-
-    df = pd.read_excel(f"{var}.xlsx").set_index('Provincia')
+    
+    df = pd.read_csv(f"https://raw.githubusercontent.com/andreamazzoleni/Dash_Mapbox_Italian_Banks/master/{var}.csv").set_index('Provincia')
     df = pd.Series(df['Value'])
 
     df_reindexed = df.reindex(index = provinces_names)   # give the same index order as the geojson
