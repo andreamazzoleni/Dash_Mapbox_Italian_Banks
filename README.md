@@ -11,8 +11,9 @@ The output is available on Heroku: [App Link](https://dash-mapbox-italian-banks.
 + The base code for the choropleth map comes from Vincenzo Pota: [Github Repository](https://github.com/vincepota/plotly_choropleth_tutorial)
 + The geojson for the Italian provinces updated to 2019 comes from Openpolis [Github Repository](https://github.com/openpolis/geojson-italy?files=1)
 
-### Other useful resources for Dash / Mapbox:
+### Useful resources for Dash / Mapbox:
 + Adriano Yoshino's video tutorial on Dash and Mapbox: [Github Repository](https://github.com/amyoshino/Dash_Tutorial_Series)
 
 ### Notes:
 + The current version of the app is quite slow, especially in the updating of the choropleth map. That is mainly due to my decision not to downsample the geojson file. This may be corrected in future iterations
++ The current coordinates are extrapolated from LocationIQ, which is not very accurate. Alternatively, you can get them from Mapbox, which is better. However, if you need perfect accuracy at the street number level, Google Maps offers the best API
