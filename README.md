@@ -15,5 +15,5 @@ The output is available on Heroku: [App Link](https://dash-mapbox-italian-banks.
 + Adriano Yoshino's video tutorial on Dash and Mapbox: [Github Repository](https://github.com/amyoshino/Dash_Tutorial_Series)
 
 ### Notes:
-+ The current version of the app is quite slow, especially in the updating of the choropleth map. That is mainly due to my decision not to downsample the geojson file. This may be corrected in future iterations
++ The latest version removes the choropleth map as it was slowing it down excessively due to the fact that I haven't downsampled the geojson file
 + The current coordinates are extrapolated from LocationIQ, which is not very accurate. Alternatively, you can get them from Mapbox, which is better. However, if you need perfect accuracy at the street number level, Google Maps offers the best API
